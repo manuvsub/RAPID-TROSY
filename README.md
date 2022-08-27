@@ -10,10 +10,10 @@ The script and algorithms are patented @ https://patentcenter.uspto.gov/#!/appli
 
 |Short Name	|Full Name	|Operation Type	|Pulse Length factor	|Pulse Length	|Amplitude (B1)	|Bandwidth	|Reference|
 | ----------| ----------- | ------------- | -------------       | ------------ | ----------- | ---------  |  -----|
-|UA90cs1	|0.5csNH90x0.5csAz2z_rf0.00_27.125p1_bw0.91B1.mrf	|WADE-90 on Amide with evol|	27.125	|27.125*50us=1356.25 us|	5 kHz|	0.91*B1	|Figure x|
+|UA90cs1	|0.5csHN90x0.5csAz2z_rf0.00_27.125p1_bw0.91B1.mrf|WADE-90 on Amide with evol|	27.125	|27.125*50us=1356.25 us|	5 kHz|	0.91*B1	|Figure x|
 |URcs1|	0.49csH180x0.49cs_rf0.00_59.000p1_bw0.44B1.mrf|	π with evol	59|	59*15us=885 us|	16.667 kHz	|0.44*B1	|Figure x|
 |URcs2|	0.49csN180x0.49cs_rf0.00_22.000p1_bw0.25B1.mrf|	π with evol	|22	|22*35us = 770 us|	7.14 kHz |	0.5*B1	|Figure x|
-|UARcs1|	WADEpix0.75cs_rf0.00_37.248p1_bw1.04B1.mrf|	WADE-180 on Amide with evol|	37.248|	37.248*50us = 1862.4 us|	5 kHz	|1.04*B1	|Figure x|
+|UARcs1|	wadeHNpix0.75cs_rf0.00_37.248p1_bw1.04B1.mrf|	WADE-180 on Amide with evol|	37.248|	37.248*50us = 1862.4 us|	5 kHz	|1.04*B1	|Figure x|
 |UR1	|pix_rf0.00_7.093p1_bw0.80B1.mrf|	π	|7.093	|7.093*35us = 248.255us |	7.1429 kHz|	0.8*B1	|Figure x|
 |IN2	|z2iz_rf0.00_10.021p1_bw2.40B1.mrf	|Inversion	|10.021|	10.021*12us = 12.252 us|	20.8333 kHz |	2.4*B1	|Figure x|
 
