@@ -21,65 +21,60 @@ prosol relations=<triple>
 #include <Grad.incl>
 #include <Delay.incl>
 
-# change the pulse lengths of p61 and p62 to 50 or 60 to get more water selectivity. 
+; change the  p61 and p62 to 50 or 60 to get more water selectivity. 
 "p61 = 40u"
 "p63 = 40u"
 
 "p62 = p21"
 "plw7 = 0"
 "plw0 = 0"
-
-"p11=1m"
-"spw1 = plw1*pow(p1/((p11/1m)*588.9), 2)"
+ 
 
 "spw39=plw1*pow(p1/p61, 2)"
-"p39 =p61*37.248"    /* Universal PI/2 pulse  */
-"spoff39=0.0"     /* Universal PI/2 pulse offset */ 
+"p39 =p61*37.248"    
+"spoff39=0.0"     
 ;spnam39  295_rf0.00_37.248p1_bw1.04p1.mrf;
 
 "d39 = p39*0.75"
 
-"p31 =p1*59"    /* Universal PI/2 pulse  */
-"spoff31=0.0"     /* Universal PI/2 pulse offset */
-"spw31=plw1"      /* Universal PI/2 pulse power level  */
+"p31 =p1*59"     
+"spoff31=0.0"    
+"spw31=plw1"     
 ;spnam31 s0.49csH180x0.49cs_rf0.00_59.000p1_bw0.44p1.mrf
 
 
 "spw37=plw1*pow(p1/p63, 2)"
-"p37 =p63*27.125"    /* Universal PI/2 pulse  */
-"spoff37=0.0"     /* Universal PI/2 pulse offset */ 
+"p37 =p63*27.125"   
+"spoff37=0.0"     
 ;spnam37  0.5csNH90x0.5csAz2z_rf0.00_27.125p1_bw0.91p1.mrf;
 
 
-"p14 =p3*10.021"    /* Universal PI/2 pulse  */
-"spoff3=0.0"     /* Universal PI/2 pulse offset */
-"spw14=plw2"      /* Universal PI/2 pulse power level  */
+"p14 =p3*10.021"     
+"spoff3=0.0"     
+"spw14=plw2"     
 ;spnam14 z2iz_rf0.00_10.021p1_bw2.40B1.mrf;
 
 
 "spw51=plw3"
-"p51 =p21*22"    /* Universal PI/2 pulse  */
-"spoff51=0.0"     /* Universal PI/2 pulse offset */ 
+"p51 =p21*22"    
+"spoff51=0.0"     
 ;spnam51  0.49csN180x0.49cs_rf0.00_22.000p1_bw0.25p1.mrf; 
 
 "spw52=plw3"
-"p52 =p62*22"    /* Universal PI/2 pulse  */
-"spoff52=0.0"     /* Universal PI/2 pulse offset */ 
+"p52 =p62*22"    
+"spoff52=0.0"    
 ;spnam52 0.49csN180x0.49cs_rf0.00_22.000p1_bw0.25p1.mrf; 
 
 "spw54=plw3*pow(p21/p62, 2)"
-"p54 =p62*7.093"    /* Universal PI/2 pulse  */
-"spoff54=0.0"     /* Universal PI/2 pulse offset */ 
+"p54 =p62*7.093"    
+"spoff54=0.0"    
 ;spnam54 pix_rf0.00_7.093p1_bw0.80B1.mrf
 
 "p59 = p37/13.86"
 "spw45=plw3*pow(p21/p59, 2)"
-"p45 =p59*13.86"    /* Universal PI/2 pulse  */
-"spoff45=0.0"     /* Universal PI/2 pulse offset */ 
-;spnam45 piby2x_rf0.00_13.860p1_bw2.00B1.mrf (p45:sp45 ph2):f3
-
-
-
+"p45 =p59*13.86"    
+"spoff45=0.0"      
+;spnam45 piby2x_rf0.00_13.860p1_bw2.00B1.mrf 
 
 
 "p2=p1*2"
@@ -96,9 +91,9 @@ prosol relations=<triple>
 
 "DELTA1=d26-p16-d16-4u-p37/2 -0.49*p51"
 "DELTA2=d26-p16-d16-8u - p37/2-0.49*p52"
-"DELTA3=d26-p16-d16-4u-d39 -p37/2";"DELTA3=d26-p16-d16-p27*2.385-d19*5-4u"
+"DELTA3=d26-p16-d16-4u-d39 -p37/2" 
 "DELTA4=d19-p22/2"
-"DELTA5=d26-p16-d16-p21-4u-d39 ";"DELTA5=d26-p16-d16-p27*2.154-p0*0.231-d19*5-p21-4u"
+"DELTA5=d26-p16-d16-p21-4u-d39 " 
 
 #   ifdef LABEL_CN
 "DELTA6=p14+d0*2+p21*4/3.1416+4u"
@@ -125,7 +120,7 @@ prosol relations=<triple>
   p16:gp1
   d16
   DELTA1 pl7:f3 pl0:f1
-  (center (p31:sp31 ph11) (p51:sp51 ph1):f3 );(center (p2 ph2) (p22 ph1):f3 )
+  (center (p31:sp31 ph11) (p51:sp51 ph1):f3 ) 
   4u 
   DELTA1 pl3:f3 pl0:f1
   p16:gp1
@@ -163,22 +158,19 @@ d37 pl0:f1 pl7:f3
   p16:gp2
   d16
   DELTA2 pl0:f1  pl7:f3
-  (center (p31:sp31 ph21)  (p52:sp52 ph1):f3); (center (p2 ph1) (p22 ph1):f3 )
+  (center (p31:sp31 ph21)  (p52:sp52 ph1):f3) 
   p16:gp2
   d16
   DELTA2 pl0:f1  pl3:f3
 
   4u
   4u pl0:f1  pl3:f3
-  (center (p37:sp37 ph1) (p21 ph2):f3 ) ; 
+  (center (p37:sp37 ph1) (p21 ph2):f3 )  
 
   4u
   p16:gp3
   d16 pl0:f1  pl7:f3 
-  (center (p39:sp39 ph1 d39):f1  (p52:sp52 ph1):f3); (center (p39:sp39 ph1):f1  (p52:sp52 ph1):f3 );(center (p39:sp39 ph1):f1  (p22 ph1):f3)
-
-
-
+  (center (p39:sp39 ph1 d39):f1  (p52:sp52 ph1):f3) 
 
   DELTA5
   p16:gp3
