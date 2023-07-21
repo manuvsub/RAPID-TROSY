@@ -1,4 +1,4 @@
-# WADE-TROSY 3.0
+# RAPID-TROSY 
 
 NMR pulse sequences and RF shapes for the experiments reported in JBNMR (2022)
 
