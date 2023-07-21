@@ -1,14 +1,3 @@
-;trosyf3gpphsi19.2.x
-;3 shaped pulses are added for water flip back by Youlin Xia
- 
-
-;trosyf3gpphsi19.2
-;avance-version (09/04/17)
-;2D H-1/X correlation via TROSY
-;   using sensitivity improvement
-;phase sensitive using Echo/Antiecho method
-;using f3 - channel
-;water suppression using watergate sequence
 ;(use parameterset TROSYF3GPPHSI19.2)
 ;
 ;M. Czisch & R. Boelens, J. Magn. Reson. 134, 158-160 (1998)
@@ -32,8 +21,10 @@ prosol relations=<triple>
 #include <Grad.incl>
 #include <Delay.incl>
 
-
+# change the pulse lengths of p61 and p62 to 50 or 60 to get more water selectivity. 
 "p61 = 40u"
+"p63 = 40u"
+
 "p62 = p21"
 "plw7 = 0"
 "plw0 = 0"
@@ -44,7 +35,7 @@ prosol relations=<triple>
 "spw39=plw1*pow(p1/p61, 2)"
 "p39 =p61*37.248"    /* Universal PI/2 pulse  */
 "spoff39=0.0"     /* Universal PI/2 pulse offset */ 
-;spnam39  295_rf0.00_37.248p1_bw1.04p1.mrf;139_rf0.00_18.494p1_bw0.69p1.mrf;79_rf0.00_33.999p1_bw0.81p1.mrf; (p39:sp39 ph1)
+;spnam39  295_rf0.00_37.248p1_bw1.04p1.mrf;
 
 "d39 = p39*0.75"
 
@@ -53,11 +44,11 @@ prosol relations=<triple>
 "spw31=plw1"      /* Universal PI/2 pulse power level  */
 ;spnam31 s0.49csH180x0.49cs_rf0.00_59.000p1_bw0.44p1.mrf
 
-"p63 = 40u"
+
 "spw37=plw1*pow(p1/p63, 2)"
 "p37 =p63*27.125"    /* Universal PI/2 pulse  */
 "spoff37=0.0"     /* Universal PI/2 pulse offset */ 
-;spnam37  0.5csNH90x0.5csAz2z_rf0.00_27.125p1_bw0.91p1.mrf;NH90x_z2z_rf0.00_27.100p1_bw0.93p1.mrf;  (p37:sp37 ph1)
+;spnam37  0.5csNH90x0.5csAz2z_rf0.00_27.125p1_bw0.91p1.mrf;
 
 
 "p14 =p3*10.021"    /* Universal PI/2 pulse  */
@@ -141,10 +132,7 @@ prosol relations=<triple>
   d16
   (p37:sp37 ph8);(p1 ph8) 
   4u pl0:f1
-; (p11:sp1 ph6:r):f1
-;  4u  pl1:f1
-; (p31:sp31 ph21) 
-
+  
   p16:gp1
   d16 pl1:f1
 
@@ -170,13 +158,8 @@ prosol relations=<triple>
   2u groff pl7:f3
 #   endif /*LABEL_CN*/
 d37 pl0:f1 pl7:f3
- (p54:sp54 ph1):f3 ; (p52:sp52 ph1):f3 ; (p22 ph1):f3
-;  DELTA6 pl0:f1 pl3:f3
-
-(p37:sp37 ph5);  (p1 ph5)
-;  4u pl0:f1
-;1m ; (p11:sp1 ph5:r):f1
-;  4u
+ (p54:sp54 ph1):f3
+(p37:sp37 ph5)
   p16:gp2
   d16
   DELTA2 pl0:f1  pl7:f3
@@ -184,34 +167,18 @@ d37 pl0:f1 pl7:f3
   p16:gp2
   d16
   DELTA2 pl0:f1  pl3:f3
-; 1m; (p11:sp1 ph6:r):f1
+
   4u
   4u pl0:f1  pl3:f3
-;  (center (p37:sp37 ph1) (p45:sp45 ph13):f3) ;  (center (p1 ph1) (p21 ph2):f3 )*****************
   (center (p37:sp37 ph1) (p21 ph2):f3 ) ; 
 
   4u
   p16:gp3
   d16 pl0:f1  pl7:f3 
-  ;DELTA3 
-
   (center (p39:sp39 ph1 d39):f1  (p52:sp52 ph1):f3); (center (p39:sp39 ph1):f1  (p52:sp52 ph1):f3 );(center (p39:sp39 ph1):f1  (p22 ph1):f3)
 
-/*
-  p27*0.231 ph1
-  d19*2
-  p27*0.692 ph1
-  d19*2
-  p27*1.462 ph1
-  DELTA4
-  (p22 ph1):f3
-  DELTA4
-  p27*1.462 ph6
-  d19*2
-  p27*0.692 ph6
-  d19*2
-  p0*0.231 ph6
-*/
+
+
 
   DELTA5
   p16:gp3
@@ -241,25 +208,13 @@ ph11=1
 ph12=2
 ph13=3
 
-;pl1 : f1 channel - power level for pulse (default)
-;pl3 : f3 channel - power level for pulse (default)
-;pl18: f1 channel - power level for 3-9-19-pulse (watergate)
-;sp3: f2 channel - shaped pulse 180 degree (adiabatic)
-;p0 : f1 channel -  90 degree pulse at pl18
-;                      use for fine adjustment
-;p1 : f1 channel -  90 degree high power pulse
-;p2 : f1 channel - 180 degree high power pulse
-;p14: f2 channel - 180 degree shaped pulse for inversion (adiabatic)
-;p16: homospoil/gradient pulse
-;p21: f3 channel -  90 degree high power pulse
-;p22: f3 channel - 180 degree high power pulse
-;p27: f1 channel -  90 degree pulse at pl18
+ 
+;p61 and p63 : use 60 for higher water selectivity. ie., to observe peaks near water
 ;d0 : incremented delay (2D)                         [6 usec]
 ;d1 : relaxation delay; 1-5 * T1
 ;d11: delay for disk I/O                             [30 msec]
 ;d16: delay for homospoil/gradient recovery
-;d19: delay for binomial water suppression
-;     d19 = (1/(2*d)), d = distance of next null (in Hz)
+;d19: delay for binomial water suppression 
 ;d26 : 1/(4J)YH
 ;cnst4: = J(YH)
 ;inf1: 1/SW(X) = 2 * DW(X)
@@ -285,12 +240,4 @@ ph13=3
 ;gpnam2: SMSQ10.100
 ;gpnam3: SMSQ10.100
 
-
-                                          ;preprocessor-flags-start
-;LABEL_CN: for C-13 and N-15 labeled samples start experiment with
-;             option -DLABEL_CN (eda: ZGOPTNS)
-                                          ;preprocessor-flags-end
-
-
-
-;$Id: trosyf3gpphsi19.2,v 1.6 2009/07/17 16:37:47 ber Exp $
+ 
