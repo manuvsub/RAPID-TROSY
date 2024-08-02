@@ -1,4 +1,7 @@
 ; RAPID-TROSY (Manu 2023)
+; V. S. Manu, Cristina Olivieri & Gianluigi Veglia 
+; Nature Communications volume 14, Article number: 4144 (2023)
+
 ;(use parameterset TROSYF3GPPHSI19.2)
 ;$CLASS=HighRes
 ;$DIM=2D
