@@ -1,14 +1,5 @@
+; RAPID-TROSY (Manu 2023)
 ;(use parameterset TROSYF3GPPHSI19.2)
-;
-;M. Czisch & R. Boelens, J. Magn. Reson. 134, 158-160 (1998)
-;K. Pervushin, G. Wider & K. Wuethrich, J. Biomol. NMR 12, 
-;   345-348 (1998)
-;A. Meissner, T. Schulte-Herbrueggen, J. Briand & O.W. Sorensen, Mol. Phys. 96,
-;   1137-1142 (1998)
-;J. Weigelt, J. Am. Chem. Soc. 120, 10778-10779 (1998)
-;M. Rance, J.P. Loria & A.G. Palmer III, J. Magn. Reson. 136, 91-101 (1999)
-;G. Zhu, X.M. Kong & K.H. Sze, J. Biomol. NMR 13, 77-81 (1999)
-;
 ;$CLASS=HighRes
 ;$DIM=2D
 ;$TYPE=
@@ -33,20 +24,20 @@ prosol relations=<triple>
 "spw39=plw1*pow(p1/p61, 2)"
 "p39 =p61*37.248"    
 "spoff39=0.0"     
-;spnam39  295_rf0.00_37.248p1_bw1.04p1.mrf;
+;spnam39  wadeHNpix0.75ev_rf0.00_37.248p1_bw1.04B1.mrf;
 
 "d39 = p39*0.75"
 
 "p31 =p1*59"     
 "spoff31=0.0"    
 "spw31=plw1"     
-;spnam31 s0.49csH180x0.49cs_rf0.00_59.000p1_bw0.44p1.mrf
+;spnam31 0.49evH180x0.49ev_rf0.00_59.000p1_bw0.44B1.mrf
 
 
 "spw37=plw1*pow(p1/p63, 2)"
 "p37 =p63*27.125"   
 "spoff37=0.0"     
-;spnam37  0.5csNH90x0.5csAz2z_rf0.00_27.125p1_bw0.91p1.mrf;
+;spnam37  0.5evHN90x0.5evAz2z_rf0.00_27.125p1_bw0.91B1.mrf;
 
 
 "p14 =p3*10.021"     
@@ -58,23 +49,18 @@ prosol relations=<triple>
 "spw51=plw3"
 "p51 =p21*22"    
 "spoff51=0.0"     
-;spnam51  0.49csN180x0.49cs_rf0.00_22.000p1_bw0.25p1.mrf; 
+;spnam51  0.49evN180x0.49ev_rf0.00_22.000p1_bw0.25B1.mrf; 
 
 "spw52=plw3"
 "p52 =p62*22"    
 "spoff52=0.0"    
-;spnam52 0.49csN180x0.49cs_rf0.00_22.000p1_bw0.25p1.mrf; 
+;spnam52 0.49evN180x0.49ev_rf0.00_22.000p1_bw0.25B1.mrf 
 
 "spw54=plw3*pow(p21/p62, 2)"
 "p54 =p62*7.093"    
 "spoff54=0.0"    
 ;spnam54 pix_rf0.00_7.093p1_bw0.80B1.mrf
 
-"p59 = p37/13.86"
-"spw45=plw3*pow(p21/p59, 2)"
-"p45 =p59*13.86"    
-"spoff45=0.0"      
-;spnam45 piby2x_rf0.00_13.860p1_bw2.00B1.mrf 
 
 
 "p2=p1*2"
